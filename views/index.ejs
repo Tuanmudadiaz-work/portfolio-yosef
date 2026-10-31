@@ -212,6 +212,7 @@
         <div class="ft-col"><small>Email</small>
           <% if (c.email) { %><a href="mailto:<%= c.email %>"><%= c.email %></a><% } else { %><span>[Alamat email]</span><% } %>
         </div>
+        <% if (c.instagram) { %><div class="ft-col"><small>Instagram</small><a href="<%= c.instagram %>" target="_blank" rel="noopener"><%= c.instagramLabel %></a></div><% } %>
         <div class="ft-col"><small>LinkedIn</small><a href="<%= c.linkedin %>" target="_blank" rel="noopener"><%= c.linkedinLabel %></a></div>
       </div>
       <div class="ft-mid">
