@@ -5,9 +5,9 @@
     "role": "Paid Ads Specialist",
     "position": "Digital Marketing Supervisor at Anemone Indonesia",
     "location": "Denpasar, Bali",
-    "photo": "/img/profile.jpg",
-    "heroPhoto": "/img/hero.jpg",
-    "workPhoto": "/img/work.jpg",
+    "photo": "img/profile.jpg",
+    "heroPhoto": "img/hero.jpg",
+    "workPhoto": "img/work.jpg",
     "tagline": "measured all the way to",
     "taglineSerif": "closing",
     "intro": "Paid Ads Specialist with 5+ years in digital marketing. I manage ads from account setup to reporting, with clear targets set from day one.",
@@ -16,11 +16,11 @@
       "Before that I created content, hosted live selling, and wrote for SEO. That's why I know great ads need clean numbers and creative that makes people stop scrolling."
     ],
     "platforms": [
-      { "name": "Meta Ads", "logo": "/img/logos/meta.svg" },
-      { "name": "TikTok Ads", "logo": "/img/logos/tiktok.svg" },
-      { "name": "Google Ads", "logo": "/img/logos/googleads.svg" },
-      { "name": "Instagram", "logo": "/img/logos/instagram.svg" },
-      { "name": "TikTok", "logo": "/img/logos/tiktok.svg" }
+      { "name": "Meta Ads", "logo": "img/logos/meta.svg" },
+      { "name": "TikTok Ads", "logo": "img/logos/tiktok.svg" },
+      { "name": "Google Ads", "logo": "img/logos/googleads.svg" },
+      { "name": "Instagram", "logo": "img/logos/instagram.svg" },
+      { "name": "TikTok", "logo": "img/logos/tiktok.svg" }
     ]
   },
   "caseStudy": {
