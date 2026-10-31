@@ -49,10 +49,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .hero-top .dots{display:flex;justify-content:flex-end;gap:.3rem;margin-bottom:.4rem}
 .hero-top .dots span{width:30px;height:30px;border-radius:50%;border:2px solid var(--hero);margin-left:-10px;display:grid;place-items:center;font-size:.62rem;font-weight:700;color:#151515}
 .hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
-.mark{font-size:clamp(3.2rem,9vw,6.4rem);font-weight:300;letter-spacing:-.05em;line-height:.9}
+.mark{font-size:clamp(3.2rem,9vw,6.4rem);font-weight:300;letter-spacing:-.05em;line-height:1;margin-left:-.04em}
 .mark sup{font-size:.28em;font-weight:500;vertical-align:top;margin-left:.1em;position:relative;top:.35em}
-.mark-sub{font-size:.95rem;color:#D9D9D4;margin-top:.5rem;padding-left:.3rem}
-.hero-intro{margin-top:2rem;max-width:23rem;font-size:.9rem;color:#E4E4DF;padding-left:1.2rem;border-left:1px solid rgba(255,255,255,.35)}
+.mark-sub{font-size:1rem;color:#D9D9D4;margin-top:clamp(.9rem,1.8vw,1.4rem)}
+.hero-intro{margin-top:clamp(1.4rem,2.6vw,2rem);max-width:23rem;font-size:.9rem;color:#E4E4DF;padding-left:1.2rem;border-left:1px solid rgba(255,255,255,.35)}
 .glass{width:min(270px,100%);background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:18px;padding:1.1rem}
 .glass h2{font-size:1.15rem;line-height:1.25}
 .glass .mini{margin-top:.9rem;border-radius:12px;background:rgba(10,10,10,.35);padding:.8rem;font-size:.8rem}
