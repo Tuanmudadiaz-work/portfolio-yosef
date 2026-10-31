@@ -196,7 +196,10 @@
       </div>
     </section>
 
-    <div class="statement" aria-hidden="true"><p><%= d.statement.text %> <em><%= d.statement.serif %></em>.</p></div>
+    <%# Teks diulang 4x: animasi geser -50% = 2 salinan, jadi putarannya menyambung tanpa jeda %>
+    <div class="statement" aria-hidden="true">
+      <div class="marquee"><% for (let i = 0; i < 4; i++) { %><p><%= d.statement.text %> <em><%= d.statement.serif %></em><span class="sep">✦</span></p><% } %></div>
+    </div>
   </main>
 
   <footer id="kontak">
