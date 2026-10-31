@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title><%= d.profile.name %> – <%= d.profile.role %></title>
+<meta name="description" content="<%= d.profile.intro %>">
+<meta property="og:title" content="<%= d.profile.name %> – <%= d.profile.role %>">
+<meta property="og:description" content="<%= d.caseStudy.summary %>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<%
+  const c = d.contact;
+  const contactHref = c.waUrl || (c.email ? 'mailto:' + c.email : '#kontak');
+%>
+<div class="page">
+
+  <div class="hero-wrap">
+    <header class="hero">
+      <% if (d.profile.heroPhoto) { %><img class="hero-photo" src="<%= d.profile.heroPhoto %>" alt=""><% } %>
+      <div class="streaks" aria-hidden="true"><i></i><span></span><span></span><span></span><span></span></div>
+      <nav class="nav" aria-label="Navigasi utama">
+        <b><%= d.profile.wordmark %></b>
+        <a class="l" href="#hasil">Hasil</a>
+        <a class="l" href="#layanan">Layanan</a>
+        <a class="l" href="#paket">Paket</a>
+        <a class="l" href="#faq">FAQ</a>
+        <a class="pill" href="#kontak">Hubungi saya</a>
+      </nav>
+
+      <div class="hero-top">
+        <div class="dots" aria-hidden="true"><span style="background:#E7E5DC">M</span><span style="background:#C8CFC5">T</span><span style="background:#D9A441">G</span></div>
+        Meta, TikTok, dan Google Ads
+      </div>
+
+      <div class="hero-bottom">
+        <div>
+          <h1 class="mark"><%= d.profile.wordmark %><sup>ads</sup></h1>
+          <p class="mark-sub"><%= d.profile.tagline %> <span class="serif"><%= d.profile.taglineSerif %></span></p>
+          <p class="hero-intro"><%= d.profile.intro %></p>
+        </div>
+        <div class="glass">
+          <h2>Iklan untuk leads dan penjualan</h2>
+          <div class="mini"><b><%= d.caseStudy.heroStat.value %></b><%= d.caseStudy.heroStat.label %></div>
+          <div class="row"><span>Mulai <%= d.plans[d.plans.length - 1].price %>/bulan</span><a class="pill" href="<%= contactHref %>"<% if (c.waUrl) { %> target="_blank" rel="noopener"<% } %>>Ngobrol yuk</a></div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main>
+    <section class="about in" aria-labelledby="about-h">
+      <div class="about-grid">
+        <span class="tag">Tentang saya</span>
+        <h2 id="about-h" class="quote">“Saya tidak cuma menjalankan iklan. Saya <em>mengukur</em> setiap rupiah sampai jadi <em>closing</em>, bukan berhenti di <em>klik</em>.”</h2>
+      </div>
+      <div class="about-body">
+        <% if (d.profile.photo) { %>
+          <div class="portrait has-photo"><img src="<%= d.profile.photo %>" alt="Foto <%= d.profile.name %>"></div>
+        <% } else { %>
+          <div class="portrait" role="img" aria-label="Tempat foto">[Foto Yosef]</div>
+        <% } %>
+        <div>
+          <% d.profile.about.forEach((p, i) => { %><p<% if (i) { %> style="margin-top:1rem"<% } %>><%= p %></p><% }) %>
+          <a class="chat" href="#kontak">Ngobrol yuk</a>
+        </div>
+      </div>
+      <div class="platforms" aria-label="Platform yang saya kelola">
+        <% d.profile.platforms.forEach(p => { %><span><%= p %></span><% }) %>
+      </div>
+    </section>
+
+    <section class="case in" id="hasil" aria-labelledby="case-h">
+      <% const cs = d.caseStudy; %>
+      <div class="center">
+        <h2 id="case-h"><%= cs.title %> <em><%= cs.titleSerif %></em></h2>
+        <p><%= cs.summary %></p>
+      </div>
+
+      <div class="scatter">
+        <div class="sc sc-funnel">
+          <h3>Dari budget sampai closing</h3>
+          <% cs.funnel.forEach(f => { %>
+            <div class="f-row"><div class="f-label"><span><%= f.label %></span><strong><%= f.value %></strong></div><div class="f-bar <%= f.style || '' %>" style="width:<%= f.width %>%"></div></div>
+            <% if (f.step) { %><p class="f-step"><%= f.step %></p><% } %>
+          <% }) %>
+          <div class="f-row f-out"><div class="f-label"><span><%= cs.funnelResult.label %></span><strong><%= cs.funnelResult.value %></strong></div><div class="f-bar" style="width:100%"></div></div>
+          <p class="cap"><%= cs.funnelNote %></p>
+        </div>
+
+        <div class="sc sc-chart">
+          <h3>Belanja iklan vs revenue per bulan</h3>
+          <div class="legend"><span><i style="background:var(--ink)"></i>Belanja iklan</span><span><i style="background:var(--gold)"></i>Revenue terealisasi</span></div>
+          <div class="chart-scroll">
+            <svg id="chart" viewBox="0 0 760 320" role="img" aria-label="Grafik batang belanja iklan dan revenue terealisasi per bulan, dalam juta rupiah."></svg>
+          </div>
+          <p class="cap"><%= cs.chart.note %></p>
+        </div>
+
+        <div class="sc sc-table">
+          <h3>Semester 2 lebih efisien</h3>
+          <div class="tbl-scroll">
+            <table>
+              <thead><tr><th scope="col"></th><th scope="col">Jan–Jun</th><th scope="col">Jul–Okt</th></tr></thead>
+              <tbody>
+                <% cs.semester.rows.forEach(r => { %>
+                  <tr><th scope="row"><%= r.label %></th><td><%= r.a %></td><td<% if (r.good) { %> class="good"<% } %>><%= r.b %></td></tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+          <p class="cap"><%= cs.semester.note %></p>
+        </div>
+
+        <div class="sc sc-work">
+          <h3>Yang saya kerjakan</h3>
+          <ul><% cs.work.forEach(w => { %><li><%= w %></li><% }) %></ul>
+          <p class="cap"><%= cs.workNote %></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="layanan" aria-labelledby="sv-h">
+      <div class="in sv-grid">
+        <div class="sv-card">
+          <div class="box"><b><%= d.services.length %> tahap</b><span>ditangani dari awal sampai laporan</span></div>
+          <p>Semua pekerjaan paid ads dalam satu tangan, dengan target yang disepakati sejak awal.</p>
+          <a href="#paket">Lihat paket</a>
+        </div>
+        <div>
+          <h2 id="sv-h" class="tag" style="color:var(--dark-muted);font-size:.85rem;font-weight:500;margin-bottom:1rem">Layanan</h2>
+          <ol class="sv-list">
+            <% d.services.forEach(s => { %><li><h3><%= s.title %></h3><p><%= s.desc %></p></li><% }) %>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="why in" aria-labelledby="why-h">
+      <div class="center">
+        <h2 id="why-h">Kenapa memilih saya sebagai <em>Paid Ads Specialist Anda</em></h2>
+      </div>
+      <div class="bento">
+        <% d.bento.forEach(b => { %>
+          <% if (b.timeline) { %>
+            <div class="bx tall">
+              <h3>Perjalanan saya</h3>
+              <ol class="tl"><% d.timeline.forEach(t => { %><li><%= t.company %><small><%= t.detail %></small></li><% }) %></ol>
+            </div>
+          <% } else { %>
+            <div class="bx <%= b.style || '' %>"><b><%= b.value %></b><span><%= b.label %></span></div>
+          <% } %>
+        <% }) %>
+      </div>
+    </section>
+
+    <section class="pricing in" id="paket" aria-labelledby="pk-h">
+      <div class="center">
+        <h2 id="pk-h">Dua cara <em>bekerja sama</em></h2>
+        <p><%= d.plansNote %></p>
+      </div>
+      <div class="plans">
+        <% d.plans.forEach(p => { %>
+          <div class="plan<%= p.featured ? ' main' : '' %>">
+            <h3><%= p.name %></h3>
+            <div class="price"><%= p.price %> <small><%= p.unit %></small></div>
+            <p class="desc"><%= p.desc %></p>
+            <ul><% p.items.forEach(it => { %><li><%= it %></li><% }) %></ul>
+            <div class="spacer"></div>
+            <a class="pill" href="<%= contactHref %>"<% if (c.waUrl) { %> target="_blank" rel="noopener"<% } %>><%= p.cta %></a>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <section class="faq in" id="faq" aria-labelledby="faq-h">
+      <div class="faq-grid">
+        <span class="tag">FAQ</span>
+        <div>
+          <div class="faq-head">
+            <h2 id="faq-h">Pertanyaan yang <em>sering ditanyakan</em></h2>
+            <a class="pill" href="<%= contactHref %>"<% if (c.waUrl) { %> target="_blank" rel="noopener"<% } %>>Tanya langsung</a>
+          </div>
+          <div class="faq-list">
+            <% d.faq.forEach(f => { %><details><summary><%= f.q %></summary><p><%= f.a %></p></details><% }) %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="statement" aria-hidden="true"><p><%= d.statement.text %> <em><%= d.statement.serif %></em>.</p></div>
+  </main>
+
+  <footer id="kontak">
+    <div class="in">
+      <div class="ft-top">
+        <div><h2>Mari ukur iklan Anda <em>sampai closing</em></h2></div>
+        <div class="ft-col"><small>WhatsApp</small>
+          <% if (c.waUrl) { %><a href="<%= c.waUrl %>" target="_blank" rel="noopener"><%= c.whatsapp %></a><% } else { %><span>[Nomor WhatsApp]</span><% } %>
+        </div>
+        <div class="ft-col"><small>Email</small>
+          <% if (c.email) { %><a href="mailto:<%= c.email %>"><%= c.email %></a><% } else { %><span>[Alamat email]</span><% } %>
+        </div>
+        <div class="ft-col"><small>LinkedIn</small><a href="<%= c.linkedin %>" target="_blank" rel="noopener"><%= c.linkedinLabel %></a></div>
+      </div>
+      <div class="ft-mid">
+        <nav aria-label="Navigasi footer"><a href="#hasil">Hasil</a><a href="#layanan">Layanan</a><a href="#paket">Paket</a><a href="#faq">FAQ</a></nav>
+        <span><%= c.footnote %></span>
+      </div>
+      <p class="giant" aria-hidden="true"><%= d.profile.wordmark %><sup>ads</sup></p>
+    </div>
+  </footer>
+</div>
+
+<script id="chart-data" type="application/json"><%- JSON.stringify(d.caseStudy.chart).replace(/</g, '\\u003c') %></script>
+<script src="/js/chart.js"></script>
+</body>
+</html>

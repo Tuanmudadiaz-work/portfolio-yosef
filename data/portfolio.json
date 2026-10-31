@@ -1,0 +1,110 @@
+{
+  "profile": {
+    "name": "Yosef Bartolumeus Dias",
+    "wordmark": "yosef dias",
+    "role": "Paid Ads Specialist",
+    "position": "Supervisor Digital Marketing di Anemone Indonesia",
+    "location": "Denpasar, Bali",
+    "photo": "",
+    "heroPhoto": "",
+    "tagline": "diukur sampai",
+    "taglineSerif": "closing",
+    "intro": "Paid Ads Specialist dengan 5+ tahun di digital marketing. Saya mengelola iklan dari setup akun sampai laporan, dengan target yang jelas di depan.",
+    "about": [
+      "Saya Yosef Bartolumeus Dias, Supervisor Digital Marketing di Anemone Indonesia, Denpasar, Bali. Tiga tahun terakhir saya fokus mengelola paid ads untuk lead generation sampai penjualan franchise.",
+      "Sebelumnya saya membuat konten, menjadi host live selling, dan menulis SEO. Karena itu saya paham bahwa iklan yang bagus butuh angka yang rapi dan creative yang membuat orang berhenti scroll."
+    ],
+    "platforms": ["Meta Ads", "TikTok Ads", "Google Ads", "Instagram", "TikTok"]
+  },
+  "caseStudy": {
+    "title": "Rp130 juta budget iklan jadi Rp1,41 miliar,",
+    "titleSerif": "dan setiap rupiahnya tercatat",
+    "summary": "Studi kasus lead generation untuk brand franchise edukasi anak berskala nasional, Januari–Oktober 2026. Targetnya calon mitra yang benar-benar membayar, bukan sekadar leads murah.",
+    "funnel": [
+      { "label": "Budget iklan", "value": "Rp130 jt", "width": 100, "style": "sage" },
+      { "label": "Leads berkualitas (MQL)", "value": "191", "width": 100, "step": "23% lanjut membayar booking fee" },
+      { "label": "Booking fee", "value": "44", "width": 23, "step": "57% booking berlanjut ke pelunasan" },
+      { "label": "Mitra franchise closing", "value": "25", "width": 13 }
+    ],
+    "funnelResult": { "label": "Revenue terealisasi", "value": "Rp1,41 M" },
+    "funnelNote": "Biaya iklan per mitra closing Rp5,2 jt, untuk nilai kemitraan ±Rp55 jt.",
+    "chart": {
+      "months": ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt"],
+      "spend": [11.24, 11.12, 9.92, 10.86, 14.41, 14.5, 14.03, 18.4, 10.86, 15.05],
+      "revenue": [101.5, 101, 50, 250.5, 201, 100.5, 250, 251, 101.5, 1.5],
+      "note": "Angka di atas batang adalah ROAS bulanan. Leads Oktober sebagian besar masih berproses, dan masih ada pipeline Rp247,5 jt yang belum lunas."
+    },
+    "semester": {
+      "rows": [
+        { "label": "Belanja iklan", "a": "Rp72,0 jt", "b": "Rp58,3 jt" },
+        { "label": "Jumlah MQL", "a": "84", "b": "107", "good": true },
+        { "label": "Biaya per MQL", "a": "Rp858 rb", "b": "Rp545 rb", "good": true }
+      ],
+      "note": "Dalam 4 bulan, lebih banyak MQL dengan budget lebih kecil: biaya per MQL turun 36%."
+    },
+    "work": [
+      "Mengelola Meta Ads dan TikTok Ads untuk menjaring calon mitra.",
+      "Menyelaraskan kriteria lead dengan tim sales.",
+      "Memantau funnel sampai pelunasan, bukan hanya biaya per lead.",
+      "Rekap bulanan: belanja, MQL, booking, closing, ROAS, dan biaya akuisisi."
+    ],
+    "workNote": "Sebelumnya, kampanye yang sama menghasilkan 1.400+ leads per bulan dengan CPL hingga Rp5.000.",
+    "heroStat": { "value": "10,8x", "label": "ROAS kampanye franchise, Jan–Okt 2026" }
+  },
+  "services": [
+    { "title": "Setup akun dan tracking", "desc": "Akun iklan dan pelacakan konversi disiapkan supaya setiap rupiah bisa diukur." },
+    { "title": "Riset dan strategi", "desc": "Target, audiens, dan struktur kampanye ditentukan sesuai tujuan bisnis." },
+    { "title": "Eksekusi dan optimasi", "desc": "Kampanye dijalankan, creative dan audiens diuji, budget dialihkan ke yang paling efektif." },
+    { "title": "Reporting dan analisa", "desc": "Laporan yang menjelaskan apa yang berhasil, apa yang tidak, dan langkah berikutnya." }
+  ],
+  "bento": [
+    { "value": "Rp1,41 M", "label": "Revenue terealisasi dari Rp130 jt belanja iklan dalam 10 bulan.", "style": "ink wide" },
+    { "value": "25", "label": "Mitra franchise closing." },
+    { "timeline": true },
+    { "value": "−36%", "label": "Biaya per MQL di semester 2.", "style": "sage" },
+    { "value": "1 juta+", "label": "Views konten viral di TikTok dan Instagram." },
+    { "value": "Rp100 jt+", "label": "Penjualan per bulan lewat live commerce untuk brand batik. Saya tahu konten seperti apa yang membuat orang membeli.", "style": "wide" }
+  ],
+  "timeline": [
+    { "company": "Anemone Indonesia", "detail": "Specialist lalu Supervisor, 2023–sekarang" },
+    { "company": "CV. 72 Batik", "detail": "Content Creator, 2022–2024" },
+    { "company": "PT. Bangun Digital Nusantara", "detail": "SEO Content Writer, 2021" },
+    { "company": "Rumah Mesin", "detail": "SEO Specialist (magang), 2019" }
+  ],
+  "plans": [
+    {
+      "name": "All-in bulanan",
+      "price": "Rp4 jt",
+      "unit": "/ bulan",
+      "desc": "Seluruh pekerjaan paid ads ditangani, dari setup akun sampai reporting dan analisa hasil.",
+      "items": ["Meta Ads, TikTok Ads, dan/atau Google Ads", "Setup akun dan tracking", "Strategi, eksekusi, dan optimasi rutin", "Reporting dan analisa berorientasi target"],
+      "cta": "Pilih paket ini",
+      "featured": true
+    },
+    {
+      "name": "Fee dasar + success fee",
+      "price": "Rp3 jt",
+      "unit": "/ bulan + % per closing",
+      "desc": "Cakupan kerja sama dengan paket all-in, ditambah success fee untuk setiap closing. Persentasenya kita sepakati bersama.",
+      "items": ["Cocok untuk brand dengan nilai transaksi besar", "Definisi closing dan pencatatannya disepakati di awal", "Kepentingan saya sejalan dengan hasil penjualan Anda"],
+      "cta": "Diskusikan success fee"
+    }
+  ],
+  "plansNote": "Pilih sesuai cara brand Anda ingin berbagi risiko. Budget iklan dibayarkan langsung ke platform dan terpisah dari biaya jasa.",
+  "faq": [
+    { "q": "Apakah budget iklan sudah termasuk biaya jasa?", "a": "Tidak. Budget iklan dibayarkan langsung oleh brand ke platform iklan. Biaya jasa Rp4 jt atau Rp3 jt per bulan terpisah dari budget tersebut." },
+    { "q": "Bagaimana success fee dihitung?", "a": "Success fee berupa persentase dari setiap closing yang berasal dari iklan. Persentase, definisi closing, dan cara pencatatannya kita sepakati bersama sebelum mulai." },
+    { "q": "Platform iklan apa saja yang bisa ditangani?", "a": "Meta Ads (Facebook dan Instagram), TikTok Ads, dan Google Ads, sesuai kebutuhan dan target bisnis Anda." },
+    { "q": "Apa saja yang ada di laporan?", "a": "Belanja iklan, jumlah leads, kualitas leads, konversi sampai closing, ROAS, dan biaya akuisisi, disertai analisa apa yang berhasil dan rencana langkah berikutnya." },
+    { "q": "Bisnis seperti apa yang paling cocok?", "a": "Bisnis yang ingin mengukur iklan sampai penjualan, terutama yang mengandalkan leads seperti franchise, jasa, dan produk bernilai tinggi." }
+  ],
+  "statement": { "text": "Saya tidak mengejar klik,", "serif": "saya mengejar closing" },
+  "contact": {
+    "whatsapp": "",
+    "whatsappMessage": "Halo Yosef, saya tertarik dengan jasa paid ads Anda.",
+    "email": "",
+    "linkedin": "https://www.linkedin.com/in/yosef-bartolumeus-dias/",
+    "linkedinLabel": "yosef-bartolumeus-dias",
+    "footnote": "Angka studi kasus dari rekap internal kampanye Jan–Okt 2026, dihitung dari total."
+  }
+}
