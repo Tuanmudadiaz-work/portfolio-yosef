@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="platforms" aria-label="Platform yang saya kelola">
-        <% d.profile.platforms.forEach(p => { %><span><%= p %></span><% }) %>
+        <% d.profile.platforms.forEach(p => { const pl = typeof p === 'string' ? { name: p } : p; %><span><% if (pl.logo) { %><img src="<%= pl.logo %>" alt="" width="22" height="22"><% } %><%= pl.name %></span><% }) %>
       </div>
     </section>
 

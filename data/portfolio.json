@@ -15,7 +15,13 @@
       "Saya Yosef Bartolumeus Dias, Supervisor Digital Marketing di Anemone Indonesia, Denpasar, Bali. Tiga tahun terakhir saya fokus mengelola paid ads untuk lead generation sampai penjualan franchise.",
       "Sebelumnya saya membuat konten, menjadi host live selling, dan menulis SEO. Karena itu saya paham bahwa iklan yang bagus butuh angka yang rapi dan creative yang membuat orang berhenti scroll."
     ],
-    "platforms": ["Meta Ads", "TikTok Ads", "Google Ads", "Instagram", "TikTok"]
+    "platforms": [
+      { "name": "Meta Ads", "logo": "/img/logos/meta.svg" },
+      { "name": "TikTok Ads", "logo": "/img/logos/tiktok.svg" },
+      { "name": "Google Ads", "logo": "/img/logos/googleads.svg" },
+      { "name": "Instagram", "logo": "/img/logos/instagram.svg" },
+      { "name": "TikTok", "logo": "/img/logos/tiktok.svg" }
+    ]
   },
   "caseStudy": {
     "title": "Rp130 juta budget iklan jadi Rp1,41 miliar,",
