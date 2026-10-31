@@ -128,7 +128,10 @@
     <section class="services" id="layanan" aria-labelledby="sv-h">
       <div class="in sv-grid">
         <div class="sv-card">
-          <div class="box"><b><%= d.services.length %> tahap</b><span>ditangani dari awal sampai laporan</span></div>
+          <div class="box<%= d.profile.workPhoto ? ' has-photo' : '' %>">
+            <% if (d.profile.workPhoto) { %><img src="<%= d.profile.workPhoto %>" alt="<%= d.profile.name %> mempresentasikan hasil kampanye" loading="lazy"><% } %>
+            <b><%= d.services.length %> tahap</b><span>ditangani dari awal sampai laporan</span>
+          </div>
           <p>Semua pekerjaan paid ads dalam satu tangan, dengan target yang disepakati sejak awal.</p>
           <a href="#paket">Lihat paket</a>
         </div>
