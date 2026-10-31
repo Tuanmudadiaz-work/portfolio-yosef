@@ -24,7 +24,7 @@
   for (var v = 0; v <= step * 5; v += step) {
     var y = T + ch - (v / max) * ch;
     el("line", { x1: L, x2: W - R, y1: y, y2: y, stroke: "var(--line)", "stroke-width": 1 });
-    el("text", { x: L - 8, y: y + 4, "text-anchor": "end", "font-size": 11, fill: "var(--muted)" }, v === 0 ? "0" : "Rp" + v + " jt");
+    el("text", { x: L - 8, y: y + 4, "text-anchor": "end", "font-size": 11, fill: "var(--muted)" }, v === 0 ? "0" : "Rp" + v + "M");
   }
 
   months.forEach(function (m, i) {
@@ -35,7 +35,7 @@
     el("rect", { x: cx + 2, y: T + ch - hr, width: bw, height: hr, rx: 3, fill: "var(--gold)" });
     if (spend[i] > 0) {
       el("text", { x: cx + 2 + bw / 2, y: T + ch - hr - 7, "text-anchor": "middle", "font-size": 11, "font-weight": 600, fill: "var(--ink)" },
-        (rev[i] / spend[i]).toFixed(1).replace(".", ",") + "x");
+        (rev[i] / spend[i]).toFixed(1) + "x");
     }
     el("text", { x: cx, y: H - 12, "text-anchor": "middle", "font-size": 12, fill: "var(--muted)" }, m);
   });
