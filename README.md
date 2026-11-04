@@ -48,6 +48,8 @@ Untuk mengecek hasil build di komputer: `npm run build`, lalu buka `dist/index.h
 
 Path gambar, CSS, dan JS sengaja ditulis relatif (`img/...`, bukan `/img/...`) supaya tetap jalan di alamat `/portfolio-yosef/`.
 
+CSS dan JS dipanggil lewat `d.asset(...)` di template, yang menambahkan `?v=<hash isi file>`. Setiap file berubah, alamatnya ikut berubah, jadi pengunjung tidak tertahan di cache versi lama setelah deploy.
+
 ### Render / Railway (opsional)
 
 Kalau butuh server Node.js (misalnya untuk `/api/portfolio`), bisa di-deploy gratis di Render, Railway, atau layanan lain yang mendukung Node.js:
