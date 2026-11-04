@@ -142,7 +142,7 @@
   <section class="wrap sec" id="experience" aria-labelledby="xp-h">
     <div class="sec-head"><h2 id="xp-h">Experience</h2></div>
     <ol class="xp">
-      <% d.timeline.forEach(t => { %><li><b><%= t.company %></b><span class="muted"><%= t.detail %></span></li><% }) %>
+      <% d.timeline.forEach(t => { %><li><div><b><%= t.company %></b><% if (t.location) { %><small class="muted"><%= t.location %></small><% } %></div><span class="muted"><%= t.detail %></span></li><% }) %>
     </ol>
   </section>
 

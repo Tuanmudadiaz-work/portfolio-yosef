@@ -74,10 +74,10 @@
     { "value": "Rp100M+", "label": "Monthly sales through live commerce for a batik brand. I know what kind of content makes people buy.", "style": "wide" }
   ],
   "timeline": [
-    { "company": "Anemone Indonesia", "detail": "Specialist, then Supervisor, 2023–present" },
-    { "company": "CV. 72 Batik", "detail": "Content Creator, 2022–2024" },
-    { "company": "PT. Bangun Digital Nusantara", "detail": "SEO Content Writer, 2021" },
-    { "company": "Rumah Mesin", "detail": "SEO Specialist (intern), 2019" }
+    { "company": "Anemone Indonesia", "location": "Denpasar, Bali", "detail": "Digital Marketing Specialist, then Digital Marketing Supervisor, 2023–present" },
+    { "company": "CV. 72 Batik", "location": "Yogyakarta", "detail": "Content Creator, 2022–2024" },
+    { "company": "PT. Bangun Digital Nusantara", "location": "Jakarta", "detail": "SEO Content Writer, 2021" },
+    { "company": "CV. Rumah Mesin", "location": "Bantul, Yogyakarta", "detail": "SEO Specialist (intern), 2019" }
   ],
   "plans": [
     {
