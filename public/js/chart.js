@@ -21,6 +21,13 @@
     return e;
   }
 
+  // tooltip bawaan browser saat batang di-hover
+  function tip(e, text) {
+    var t = document.createElementNS(NS, "title");
+    t.textContent = text;
+    e.appendChild(t);
+  }
+
   for (var v = 0; v <= step * 5; v += step) {
     var y = T + ch - (v / max) * ch;
     el("line", { x1: L, x2: W - R, y1: y, y2: y, stroke: "var(--line)", "stroke-width": 1 });
@@ -31,10 +38,14 @@
     var cx = L + gw * i + gw / 2;
     var hs = (spend[i] / max) * ch;
     var hr = Math.max((rev[i] / max) * ch, 1.5);
-    el("rect", { x: cx - bw - 2, y: T + ch - hs, width: bw, height: hs, rx: 3, fill: "var(--ink)" });
-    el("rect", { x: cx + 2, y: T + ch - hr, width: bw, height: hr, rx: 3, fill: "var(--gold)" });
+    // jeda hanya untuk animasi tumbuh (transform), bukan untuk efek hover (opacity)
+    var delay = "transition-delay:" + i * 60 + "ms,0s";
+    tip(el("rect", { x: cx - bw - 2, y: T + ch - hs, width: bw, height: hs, rx: 3, fill: "var(--ink)", "class": "bar", style: delay }),
+      m + " ad spend: Rp" + spend[i] + "M");
+    tip(el("rect", { x: cx + 2, y: T + ch - hr, width: bw, height: hr, rx: 3, fill: "var(--gold)", "class": "bar", style: delay }),
+      m + " revenue: Rp" + rev[i] + "M");
     if (spend[i] > 0) {
-      el("text", { x: cx + 2 + bw / 2, y: T + ch - hr - 7, "text-anchor": "middle", "font-size": 11, "font-weight": 600, fill: "var(--ink)" },
+      el("text", { x: cx + 2 + bw / 2, y: T + ch - hr - 7, "text-anchor": "middle", "font-size": 11, "font-weight": 600, fill: "var(--ink)", "class": "roas" },
         (rev[i] / spend[i]).toFixed(1) + "x");
     }
     el("text", { x: cx, y: H - 12, "text-anchor": "middle", "font-size": 12, fill: "var(--muted)" }, m);
