@@ -7,83 +7,76 @@
 <meta name="description" content="<%= d.profile.intro %>">
 <meta property="og:title" content="<%= d.profile.name %> – <%= d.profile.role %>">
 <meta property="og:description" content="<%= d.caseStudy.summary %>">
+<meta name="theme-color" content="#111111">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <%
-  const c = d.contact;
+  const p = d.profile, cs = d.caseStudy, c = d.contact;
   const contactHref = c.waUrl || (c.email ? 'mailto:' + c.email : '#contact');
+  const ext = c.waUrl ? ' target="_blank" rel="noopener"' : '';
 %>
-<div class="page">
-
-  <div class="hero-wrap">
-    <header class="hero">
-      <% if (d.profile.heroPhoto) { %><img class="hero-photo" src="<%= d.profile.heroPhoto %>" alt=""><% } %>
-      <div class="streaks" aria-hidden="true"><i></i><span></span><span></span><span></span><span></span></div>
-      <nav class="nav" aria-label="Main navigation">
-        <a class="l" href="#results">Results</a>
-        <a class="l" href="#services">Services</a>
-        <a class="l" href="#pricing">Pricing</a>
-        <a class="l" href="#faq">FAQ</a>
-        <a class="pill" href="#contact">Contact me</a>
-      </nav>
-
-      <div class="hero-top">
-        <div class="dots" aria-hidden="true"><span style="background:#E7E5DC">M</span><span style="background:#C8CFC5">T</span><span style="background:#D9A441">G</span></div>
-        Meta, TikTok, and Google Ads
-      </div>
-
-      <div class="hero-bottom">
-        <div>
-          <h1 class="mark"><%= d.profile.wordmark %><sup>ads</sup></h1>
-          <p class="mark-sub"><%= d.profile.tagline %> <span class="serif"><%= d.profile.taglineSerif %></span></p>
-          <p class="hero-intro"><%= d.profile.intro %></p>
-        </div>
-        <div class="glass">
-          <h2>Ads built for leads and sales</h2>
-          <div class="mini"><b><%= d.caseStudy.heroStat.value %></b><%= d.caseStudy.heroStat.label %></div>
-          <div class="row"><span>From <%= d.plans[d.plans.length - 1].price %>/month</span><a class="pill" href="<%= contactHref %>"<% if (c.waUrl) { %> target="_blank" rel="noopener"<% } %>>Let's talk</a></div>
-        </div>
-      </div>
-    </header>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#top"><%= p.wordmark %></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="<%= contactHref %>"<%- ext %>>Let's talk</a>
   </div>
+</header>
 
-  <main>
-    <section class="about in" aria-labelledby="about-h">
-      <div class="about-grid">
-        <span class="tag">About me</span>
-        <h2 id="about-h" class="quote">“I don't just run ads. I <em>measure</em> every rupiah all the way to a <em>closing</em>, not just the <em>click</em>.”</h2>
-      </div>
-      <div class="about-body">
-        <% if (d.profile.photo) { %>
-          <div class="portrait has-photo"><img src="<%= d.profile.photo %>" alt="Photo of <%= d.profile.name %>"></div>
-        <% } else { %>
-          <div class="portrait" role="img" aria-label="Photo placeholder">[Yosef's photo]</div>
-        <% } %>
-        <div>
-          <% d.profile.about.forEach((p, i) => { %><p<% if (i) { %> style="margin-top:1rem"<% } %>><%= p %></p><% }) %>
-          <a class="chat" href="#contact">Let's talk</a>
-        </div>
-      </div>
-      <div class="platforms" aria-label="Platforms I manage">
-        <% d.profile.platforms.forEach(p => { const pl = typeof p === 'string' ? { name: p } : p; %><span><% if (pl.logo) { %><img src="<%= pl.logo %>" alt="" width="22" height="22"><% } %><%= pl.name %></span><% }) %>
-      </div>
-    </section>
+<main id="top">
+  <section class="wrap hero" aria-labelledby="hero-h">
+    <div>
+      <p class="hello">Hello<span class="caret" aria-hidden="true"></span></p>
+      <%# kata di antara *bintang* di headline diberi garis bawah %>
+      <h1 id="hero-h"><% p.headline.split('*').forEach((t, i) => { %><% if (i % 2) { %><u><%= t %></u><% } else { %><%= t %><% } %><% }) %></h1>
+    </div>
+    <figure class="hero-side">
+      <% if (p.photo) { %><img src="<%= p.photo %>" alt="Photo of <%= p.name %>" width="240" height="240"><% } %>
+      <figcaption class="mono"><span>DPS, IDN</span> · <span id="clock">WITA</span></figcaption>
+    </figure>
+  </section>
 
-    <section class="case in" id="results" aria-labelledby="case-h">
-      <% const cs = d.caseStudy; %>
-      <div class="center">
-        <h2 id="case-h"><%= cs.title %> <em><%= cs.titleSerif %></em></h2>
-        <p><%= cs.summary %></p>
-      </div>
+  <section class="wrap logos" aria-labelledby="logos-h">
+    <h2 id="logos-h" class="eyebrow">Previously with</h2>
+    <ul><% d.timeline.forEach(t => { %><li><%= t.company %></li><% }) %></ul>
+  </section>
 
-      <div class="scatter">
-        <div class="sc sc-funnel">
-          <h3>From budget to closing</h3>
+  <section class="wrap sec" id="about" aria-labelledby="about-h">
+    <div class="sec-head"><h2 id="about-h">About</h2><a class="more" href="#experience">View experience →</a></div>
+    <div class="about-body">
+      <% p.about.forEach(t => { %><p><%= t %></p><% }) %>
+    </div>
+    <div class="stats">
+      <% d.bento.filter(b => !b.timeline).forEach(b => { %><div class="stat"><b><%= b.value %></b><span><%= b.label %></span></div><% }) %>
+    </div>
+    <ul class="chips" aria-label="Platforms I manage">
+      <% p.platforms.forEach(pl => { %><li><img src="<%= pl.logo %>" alt="" width="18" height="18"><%= pl.name %></li><% }) %>
+    </ul>
+  </section>
+
+  <section class="wrap sec" id="work" aria-labelledby="work-h">
+    <div class="sec-head"><h2 id="work-h">Work</h2><a class="more" href="#contact">Get the full report →</a></div>
+    <article class="case">
+      <p class="eyebrow">Case study · Jan–Oct 2026</p>
+      <h3 class="case-title"><%= cs.title %> <%= cs.titleSerif %></h3>
+      <p class="muted case-sum"><%= cs.summary %></p>
+
+      <div class="grid2">
+        <div class="card">
+          <h4>From budget to closing</h4>
           <% cs.funnel.forEach(f => { %>
             <div class="f-row"><div class="f-label"><span><%= f.label %></span><strong><%= f.value %></strong></div><div class="f-bar <%= f.style || '' %>" style="width:<%= f.width %>%"></div></div>
             <% if (f.step) { %><p class="f-step"><%= f.step %></p><% } %>
@@ -92,8 +85,8 @@
           <p class="cap"><%= cs.funnelNote %></p>
         </div>
 
-        <div class="sc sc-chart">
-          <h3>Monthly ad spend vs revenue</h3>
+        <div class="card">
+          <h4>Monthly ad spend vs revenue</h4>
           <div class="legend"><span><i style="background:var(--ink)"></i>Ad spend</span><span><i style="background:var(--gold)"></i>Realized revenue</span></div>
           <div class="chart-scroll">
             <svg id="chart" viewBox="0 0 760 320" role="img" aria-label="Bar chart of monthly ad spend and realized revenue, in millions of rupiah."></svg>
@@ -101,8 +94,8 @@
           <p class="cap"><%= cs.chart.note %></p>
         </div>
 
-        <div class="sc sc-table">
-          <h3>A leaner second half</h3>
+        <div class="card">
+          <h4>A leaner second half</h4>
           <div class="tbl-scroll">
             <table>
               <thead><tr><th scope="col"></th><th scope="col">Jan–Jun</th><th scope="col">Jul–Oct</th></tr></thead>
@@ -116,114 +109,85 @@
           <p class="cap"><%= cs.semester.note %></p>
         </div>
 
-        <div class="sc sc-work">
-          <h3>What I did</h3>
-          <ul><% cs.work.forEach(w => { %><li><%= w %></li><% }) %></ul>
+        <div class="card">
+          <h4>What I did</h4>
+          <ul class="list"><% cs.work.forEach(w => { %><li><%= w %></li><% }) %></ul>
           <p class="cap"><%= cs.workNote %></p>
         </div>
       </div>
-    </section>
+    </article>
 
-    <section class="services" id="services" aria-labelledby="sv-h">
-      <div class="in sv-grid">
-        <div class="sv-card">
-          <div class="box<%= d.profile.workPhoto ? ' has-photo' : '' %>">
-            <% if (d.profile.workPhoto) { %><img src="<%= d.profile.workPhoto %>" alt="<%= d.profile.name %> presenting campaign results" loading="lazy"><% } %>
-            <b><%= d.services.length %> stages</b><span>handled from setup to reporting</span>
-          </div>
-          <p>All of your paid ads work in one pair of hands, with targets agreed from day one.</p>
-          <a href="#pricing">See pricing</a>
-        </div>
-        <div>
-          <h2 id="sv-h" class="tag" style="color:var(--dark-muted);font-size:.85rem;font-weight:500;margin-bottom:1rem">Services</h2>
-          <ol class="sv-list">
-            <% d.services.forEach(s => { %><li><h3><%= s.title %></h3><p><%= s.desc %></p></li><% }) %>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="why in" aria-labelledby="why-h">
-      <div class="center">
-        <h2 id="why-h">Why choose me as <em>your Paid Ads Specialist</em></h2>
-      </div>
-      <div class="bento">
-        <% d.bento.forEach(b => { %>
-          <% if (b.timeline) { %>
-            <div class="bx tall">
-              <h3>My journey</h3>
-              <ol class="tl"><% d.timeline.forEach(t => { %><li><%= t.company %><small><%= t.detail %></small></li><% }) %></ol>
-            </div>
-          <% } else { %>
-            <div class="bx <%= b.style || '' %>"><b><%= b.value %></b><span><%= b.label %></span></div>
-          <% } %>
-        <% }) %>
-      </div>
-    </section>
-
-    <section class="pricing in" id="pricing" aria-labelledby="pk-h">
-      <div class="center">
-        <h2 id="pk-h">Two ways to <em>work together</em></h2>
-        <p><%= d.plansNote %></p>
-      </div>
-      <div class="plans">
-        <% d.plans.forEach(p => { %>
-          <div class="plan<%= p.featured ? ' main' : '' %>">
-            <h3><%= p.name %></h3>
-            <div class="price"><%= p.price %> <small><%= p.unit %></small></div>
-            <p class="desc"><%= p.desc %></p>
-            <ul><% p.items.forEach(it => { %><li><%= it %></li><% }) %></ul>
-            <div class="spacer"></div>
-            <a class="pill" href="<%= contactHref %>"<% if (c.waUrl) { %> target="_blank" rel="noopener"<% } %>><%= p.cta %></a>
-          </div>
-        <% }) %>
-      </div>
-    </section>
-
-    <section class="faq in" id="faq" aria-labelledby="faq-h">
-      <div class="faq-grid">
-        <span class="tag">FAQ</span>
-        <div>
-          <div class="faq-head">
-            <h2 id="faq-h">Frequently <em>asked questions</em></h2>
-            <a class="pill" href="<%= contactHref %>"<% if (c.waUrl) { %> target="_blank" rel="noopener"<% } %>>Ask me directly</a>
-          </div>
-          <div class="faq-list">
-            <% d.faq.forEach(f => { %><details><summary><%= f.q %></summary><p><%= f.a %></p></details><% }) %>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <%# Teks diulang 4x: animasi geser -50% = 2 salinan, jadi putarannya menyambung tanpa jeda %>
-    <div class="statement" aria-hidden="true">
-      <div class="marquee"><% for (let i = 0; i < 4; i++) { %><p><%= d.statement.text %> <em><%= d.statement.serif %></em><span class="sep">✦</span></p><% } %></div>
+    <div class="cta">
+      <p>Want the full monthly report or a walkthrough of the funnel setup?</p>
+      <p class="cta-big">Let's connect!</p>
+      <a class="btn" href="<%= contactHref %>"<%- ext %>>Get in touch</a>
     </div>
-  </main>
+  </section>
 
-  <footer id="contact">
-    <div class="in">
-      <div class="ft-top">
-        <div><h2>Let's measure your ads <em>all the way to closing</em></h2></div>
-        <div class="ft-col"><small>WhatsApp</small>
-          <% if (c.waUrl) { %><a href="<%= c.waUrl %>" target="_blank" rel="noopener"><%= c.whatsapp %></a><% } else { %><span>[WhatsApp number]</span><% } %>
+  <section class="wrap sec" id="services" aria-labelledby="sv-h">
+    <div class="sec-head"><h2 id="sv-h">Services</h2><a class="more" href="#pricing">See pricing →</a></div>
+    <p class="muted sec-sub">All of your paid ads work in one pair of hands, with targets agreed from day one.</p>
+    <ol class="grid4">
+      <% d.services.forEach((s, i) => { %><li class="card"><span class="mono num">0<%= i + 1 %></span><h3><%= s.title %></h3><p class="muted"><%= s.desc %></p></li><% }) %>
+    </ol>
+  </section>
+
+  <section class="wrap sec" id="experience" aria-labelledby="xp-h">
+    <div class="sec-head"><h2 id="xp-h">Experience</h2></div>
+    <ol class="xp">
+      <% d.timeline.forEach(t => { %><li><b><%= t.company %></b><span class="muted"><%= t.detail %></span></li><% }) %>
+    </ol>
+  </section>
+
+  <section class="wrap sec" id="pricing" aria-labelledby="pk-h">
+    <div class="sec-head"><h2 id="pk-h">Pricing</h2></div>
+    <p class="muted sec-sub"><%= d.plansNote %></p>
+    <div class="grid2">
+      <% d.plans.forEach(pl => { %>
+        <div class="card plan<%= pl.featured ? ' main' : '' %>">
+          <h3><%= pl.name %></h3>
+          <div class="price"><%= pl.price %> <small><%= pl.unit %></small></div>
+          <p class="muted"><%= pl.desc %></p>
+          <ul class="list"><% pl.items.forEach(it => { %><li><%= it %></li><% }) %></ul>
+          <a class="btn" href="<%= contactHref %>"<%- ext %>><%= pl.cta %></a>
         </div>
-        <div class="ft-col"><small>Email</small>
-          <% if (c.email) { %><a href="mailto:<%= c.email %>"><%= c.email %></a><% } else { %><span>[Email address]</span><% } %>
-        </div>
-        <% if (c.instagram) { %><div class="ft-col"><small>Instagram</small><a href="<%= c.instagram %>" target="_blank" rel="noopener"><%= c.instagramLabel %></a></div><% } %>
-        <div class="ft-col"><small>LinkedIn</small><a href="<%= c.linkedin %>" target="_blank" rel="noopener"><%= c.linkedinLabel %></a></div>
-      </div>
-      <div class="ft-mid">
-        <nav aria-label="Footer navigation"><a href="#results">Results</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
-        <span><%= c.footnote %></span>
-      </div>
-      <p class="giant" aria-hidden="true"><%= d.profile.wordmark %><sup>ads</sup></p>
+      <% }) %>
     </div>
-  </footer>
-</div>
+  </section>
 
-<script id="chart-data" type="application/json"><%- JSON.stringify(d.caseStudy.chart).replace(/</g, '\\u003c') %></script>
+  <section class="wrap sec" id="faq" aria-labelledby="faq-h">
+    <div class="sec-head"><h2 id="faq-h">FAQ</h2><a class="more" href="<%= contactHref %>"<%- ext %>>Ask me directly →</a></div>
+    <div class="faq-list">
+      <% d.faq.forEach(f => { %><details><summary><%= f.q %></summary><p><%= f.a %></p></details><% }) %>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap sec" id="contact" aria-labelledby="ct-h">
+  <h2 id="ct-h">Contact</h2>
+  <p class="muted sec-sub"><%= c.availability %></p>
+  <% if (c.email) { %><a class="mail" href="mailto:<%= c.email %>"><%= c.email %></a><% } %>
+  <p class="eyebrow">Explore more</p>
+  <ul class="links">
+    <% if (c.waUrl) { %><li><a href="<%= c.waUrl %>" target="_blank" rel="noopener">WhatsApp</a></li><% } %>
+    <% if (c.linkedin) { %><li><a href="<%= c.linkedin %>" target="_blank" rel="noopener">LinkedIn</a></li><% } %>
+    <% if (c.instagram) { %><li><a href="<%= c.instagram %>" target="_blank" rel="noopener">Instagram</a></li><% } %>
+  </ul>
+  <div class="ft-bottom">
+    <span>© <%= new Date().getFullYear() %> <%= p.name %> · <%= c.footnote %></span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script id="chart-data" type="application/json"><%- JSON.stringify(cs.chart).replace(/</g, '\\u003c') %></script>
 <script src="js/chart.js"></script>
+<script>
+  (function () {
+    var el = document.getElementById("clock");
+    var fmt = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Makassar", hour: "2-digit", minute: "2-digit" });
+    function tick() { el.textContent = "WITA " + fmt.format(new Date()); }
+    tick(); setInterval(tick, 30000);
+  })();
+</script>
 </body>
 </html>

@@ -3,6 +3,7 @@
     "name": "Yosef Bartolumeus Dias",
     "wordmark": "yosef dias",
     "role": "Paid Ads Specialist",
+    "headline": "I'm a paid ads specialist who turns *ad spend* into *closed sales*, measured all the way to the last rupiah.",
     "position": "Digital Marketing Supervisor at Anemone Indonesia",
     "location": "Denpasar, Bali",
     "photo": "img/profile.jpg",
@@ -105,8 +106,8 @@
     { "q": "What's included in the reports?", "a": "Ad spend, lead volume, lead quality, conversions through to closing, ROAS, and acquisition cost, plus analysis of what worked and the plan for next steps." },
     { "q": "What kind of business is the best fit?", "a": "Businesses that want to measure ads all the way to sales, especially lead-driven ones like franchises, services, and high-value products." }
   ],
-  "statement": { "text": "I don't chase clicks,", "serif": "I chase closings" },
   "contact": {
+    "availability": "Available for paid ads management, funnel tracking setup, and performance consulting for brands across Indonesia.",
     "whatsapp": "0895360021238",
     "whatsappMessage": "Hi Yosef, I'm interested in your paid ads services.",
     "email": "yosefhdias01@gmail.com",
