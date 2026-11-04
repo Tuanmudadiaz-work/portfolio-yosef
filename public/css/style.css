@@ -52,7 +52,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* previously with */
 .logos{padding-bottom:clamp(3rem,7vw,5rem)}
 .logos ul{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem 2.5rem;margin-top:1.4rem}
-.logos li{font-size:clamp(1rem,1.8vw,1.25rem);font-weight:700;letter-spacing:-.02em;color:var(--logo);transition:color .2s}
+.logos li{color:var(--logo);transition:color .2s}
+/* logo PNG satu warna dipakai sebagai mask, jadi warnanya ikut --logo dan berubah saat hover/ganti tema */
+.logos .logo{display:block;height:calc(clamp(32px,3.6vw,46px) * var(--s,1));aspect-ratio:var(--ar);background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-position:center;mask-position:center}
 
 /* sections */
 .sec{padding-block:clamp(3rem,7vw,5rem);border-top:1px solid var(--line)}
@@ -160,7 +162,8 @@ footer .sec-sub{margin:.8rem 0 1.6rem}
   .hero-side img{width:88px}
   .hero-side figcaption{margin:0}
   .grid2,.grid4{grid-template-columns:minmax(0,1fr)}
-  .logos ul{justify-content:flex-start;gap:.7rem 1.6rem}
+  .logos ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:1.4rem 1.6rem}
+  .logos .logo{height:calc(32px * var(--s,1));max-width:100%}
   .chart-scroll svg{min-width:460px}
 }
 

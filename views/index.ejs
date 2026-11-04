@@ -58,7 +58,7 @@
 
   <section class="wrap logos" aria-labelledby="logos-h">
     <h2 id="logos-h" class="eyebrow">Previously with</h2>
-    <ul><% d.timeline.forEach(t => { %><li><%= t.company %></li><% }) %></ul>
+    <ul><% d.previously.forEach(c => { %><li><span class="logo" role="img" aria-label="<%= c.name %>" title="<%= c.name %>" style="--ar:<%= c.ratio %>;--s:<%= c.scale || 1 %>;-webkit-mask-image:url(<%= c.logo %>);mask-image:url(<%= c.logo %>)"></span></li><% }) %></ul>
   </section>
 
   <section class="wrap sec" id="about" aria-labelledby="about-h">

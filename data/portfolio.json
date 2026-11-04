@@ -73,6 +73,12 @@
     { "value": "1M+", "label": "Views on viral content across TikTok and Instagram." },
     { "value": "Rp100M+", "label": "Monthly sales through live commerce for a batik brand. I know what kind of content makes people buy.", "style": "wide" }
   ],
+  "previously": [
+    { "name": "Anemone Indonesia", "logo": "img/clients/anemone.png", "ratio": 3.73, "scale": 0.9 },
+    { "name": "PT. Bangun Digital Nusantara", "logo": "img/clients/bdn.png", "ratio": 3.03, "scale": 1.15 },
+    { "name": "CV. 72 Batik Group", "logo": "img/clients/72batik.png", "ratio": 2.2, "scale": 0.9 },
+    { "name": "CV. Rumah Mesin", "logo": "img/clients/rumahmesin.png", "ratio": 2.58 }
+  ],
   "timeline": [
     { "company": "Anemone Indonesia", "location": "Denpasar, Bali", "detail": "Digital Marketing Specialist, then Digital Marketing Supervisor, 2023–present" },
     { "company": "CV. 72 Batik", "location": "Yogyakarta", "detail": "Content Creator, 2022–2024" },
