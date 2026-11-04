@@ -46,7 +46,10 @@ ul,ol{margin:0;padding:0;list-style:none}
 .hero h1{font-size:clamp(2rem,4.6vw,3.3rem);max-width:17em;color:var(--ink-3)}
 .hero u{text-decoration-thickness:2px;text-underline-offset:.16em;text-decoration-color:var(--muted);color:var(--ink)}
 .hero-side{margin:0;text-align:center}
-.hero-side img{width:clamp(170px,20vw,240px);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;display:block;border:1px solid var(--line);filter:grayscale(.15)}
+/* avatar 3D PNG transparan: berdiri di atas sorotan lembut, tanpa bingkai */
+.hero-side picture{display:block;position:relative;isolation:isolate}
+.hero-side picture::before{content:"";position:absolute;inset:8% -18% 0;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--gold) 16%,transparent),transparent)}
+.hero-side img{height:clamp(280px,30vw,400px);width:auto;display:block;margin-inline:auto;filter:drop-shadow(0 16px 18px rgba(0,0,0,.35))}
 .hero-side figcaption{margin-top:1rem;color:var(--muted)}
 
 /* previously with */
@@ -159,7 +162,7 @@ footer .sec-sub{margin:.8rem 0 1.6rem}
   .top-actions{margin-left:auto}
   .hero{grid-template-columns:1fr;gap:2rem;padding-top:3rem}
   .hero-side{order:-1;text-align:left;display:flex;align-items:center;gap:1rem}
-  .hero-side img{width:88px}
+  .hero-side img{height:170px}
   .hero-side figcaption{margin:0}
   .grid2,.grid4{grid-template-columns:minmax(0,1fr)}
   .logos ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:1.4rem 1.6rem}

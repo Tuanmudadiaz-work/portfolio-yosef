@@ -51,7 +51,7 @@
       <h1 id="hero-h"><% p.headline.split('*').forEach((t, i) => { %><% if (i % 2) { %><u><%= t %></u><% } else { %><%= t %><% } %><% }) %></h1>
     </div>
     <figure class="hero-side">
-      <% if (p.photo) { %><img src="<%= p.photo %>" alt="Photo of <%= p.name %>" width="240" height="240"><% } %>
+      <% if (p.photo) { %><picture><% if (p.photoWebp) { %><source srcset="<%= p.photoWebp %>" type="image/webp"><% } %><img src="<%= p.photo %>" alt="3D avatar of <%= p.name %>" width="432" height="960"></picture><% } %>
       <figcaption class="mono"><span>DPS, IDN</span> · <span id="clock">WITA</span></figcaption>
     </figure>
   </section>
