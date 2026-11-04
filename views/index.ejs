@@ -51,7 +51,11 @@
       <h1 id="hero-h"><% p.headline.split('*').forEach((t, i) => { %><% if (i % 2) { %><u><%= t %></u><% } else { %><%= t %><% } %><% }) %></h1>
     </div>
     <figure class="hero-side">
-      <% if (p.photo) { %><picture><% if (p.photoWebp) { %><source srcset="<%= p.photoWebp %>" type="image/webp"><% } %><img src="<%= p.photo %>" alt="3D avatar of <%= p.name %>" width="432" height="960"></picture><% } %>
+      <% if (p.photo) { %><div class="avatar">
+        <picture><% if (p.photoWebp) { %><source srcset="<%= p.photoWebp %>" type="image/webp"><% } %><img src="<%= p.photo %>" alt="3D avatar of <%= p.name %>" width="432" height="960"></picture>
+        <%# iris tiap mata jadi lapisan terpisah yang digeser main.js; box & range dalam % dari gambar / kotak mata %>
+        <% (p.photoEyes || []).forEach(e => { const src = 'img/avatar/eye-' + e.id; %><span class="eye" style="left:<%= e.box[0] %>%;top:<%= e.box[1] %>%;width:<%= e.box[2] %>%;height:<%= e.box[3] %>%;--rx:<%= e.range[0] %>%;--ry:<%= e.range[1] %>%;-webkit-mask-image:url(<%= src %>-mask.png);mask-image:url(<%= src %>-mask.png)"><i style="background-image:url(<%= src %>.png)"></i><b style="background-image:url(<%= src %>-lid.png)"></b></span><% }) %>
+      </div><% } %>
       <figcaption class="mono"><span>DPS, IDN</span> · <span id="clock">WITA</span></figcaption>
     </figure>
   </section>

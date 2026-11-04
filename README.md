@@ -19,6 +19,7 @@ Semua teks, angka, paket, FAQ, dan kontak ada di `data/portfolio.json`. Perubaha
 
 - **Kontak:** isi `contact.whatsapp` (contoh `081234567890`) dan `contact.email`. Tombol "Ngobrol yuk" otomatis membuka WhatsApp dengan pesan pembuka dari `contact.whatsappMessage`.
 - **Foto:** simpan foto di `public/img/`, lalu isi `profile.photo` dengan `img/nama-file.jpg`. Isi `profile.heroPhoto` juga kalau ingin foto muncul di belakang hero.
+- **Avatar 3D:** `public/img/avatar.png` adalah figur utuh (PNG transparan). Di halaman dipakai `img/avatar/base.*` (figur tanpa iris) ditambah lapisan iris per mata (`img/avatar/eye-*.png`) yang digeser `main.js` mengikuti kursor. Posisi dan jangkauan lirikan ada di `profile.photoEyes`. Kalau figur diganti, lapisan mata perlu dibuat ulang.
 - **Grafik:** data bulanan ada di `caseStudy.chart` (dalam juta rupiah). Skala grafik menyesuaikan otomatis.
 
 ## Struktur

@@ -6,8 +6,12 @@
     "headline": "I'm a paid ads specialist who turns *ad spend* into *closed sales*, measured all the way to the last rupiah.",
     "position": "Digital Marketing Supervisor at Anemone Indonesia",
     "location": "Denpasar, Bali",
-    "photo": "img/avatar.png",
-    "photoWebp": "img/avatar.webp",
+    "photo": "img/avatar/base.png",
+    "photoWebp": "img/avatar/base.webp",
+    "photoEyes": [
+      { "id": "l", "box": [17.593, 29.792, 19.907, 4.167], "range": [13.953, 7.5] },
+      { "id": "r", "box": [62.963, 29.688, 18.519, 3.854], "range": [15, 8.108] }
+    ],
     "heroPhoto": "img/hero.jpg",
     "workPhoto": "img/work.jpg",
     "tagline": "measured all the way to",

@@ -25,6 +25,44 @@
     setInterval(tick, 30000);
   }
 
+  // Mata avatar mengikuti kursor; di layar sentuh / saat kursor diam, sesekali melirik sendiri
+  const avatar = document.querySelector(".avatar");
+  if (avatar && avatar.querySelector(".eye")) {
+    const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let tx = 0, ty = 0, ex = 0, ey = 0, raf = 0, ptr = null, lastMove = 0;
+    const step = function () {
+      raf = 0;
+      ex += (tx - ex) * 0.2;
+      ey += (ty - ey) * 0.2;
+      avatar.style.setProperty("--ex", ex.toFixed(3));
+      avatar.style.setProperty("--ey", ey.toFixed(3));
+      if (Math.abs(tx - ex) > 0.002 || Math.abs(ty - ey) > 0.002) raf = requestAnimationFrame(step);
+    };
+    const lookAt = function (x, y) {
+      const r = avatar.getBoundingClientRect();
+      const reach = r.width * 1.5; // makin jauh kursor, makin mentok liriknya
+      tx = Math.tanh((x - (r.left + r.width / 2)) / reach);
+      ty = Math.tanh((y - (r.top + r.height * 0.31)) / reach);
+      if (!raf) raf = requestAnimationFrame(step);
+    };
+    const center = function () { tx = ty = 0; ptr = null; if (!raf) raf = requestAnimationFrame(step); };
+    addEventListener("pointermove", function (e) { ptr = [e.clientX, e.clientY]; lastMove = Date.now(); lookAt(e.clientX, e.clientY); }, { passive: true });
+    addEventListener("pointerdown", function (e) { lastMove = Date.now(); lookAt(e.clientX, e.clientY); }, { passive: true });
+    addEventListener("scroll", function () { if (ptr) lookAt(ptr[0], ptr[1]); }, { passive: true });
+    document.documentElement.addEventListener("mouseleave", center);
+    addEventListener("blur", center);
+    if (!calm) {
+      setInterval(function () {
+        if (document.hidden || Date.now() - lastMove < 4000) return;
+        const r = avatar.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight) return;
+        // lirik acak, lalu sering kembali ke tengah
+        if (Math.random() < 0.4) { tx = 0; ty = 0; } else { tx = Math.random() * 1.6 - 0.8; ty = Math.random() * 0.8 - 0.3; }
+        if (!raf) raf = requestAnimationFrame(step);
+      }, 2200);
+    }
+  }
+
   // Sorotan cahaya di kartu mengikuti kursor
   document.querySelectorAll(".card, .case").forEach(function (el) {
     el.addEventListener("pointermove", function (e) {
