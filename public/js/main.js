@@ -6,7 +6,7 @@
   const meta = document.querySelector('meta[name="theme-color"]');
   function applyTheme(t) {
     root.dataset.theme = t;
-    btn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    btn.setAttribute("aria-checked", String(t === "light"));
     if (meta) meta.content = t === "dark" ? "#111111" : "#FAFAF8";
   }
   applyTheme(root.dataset.theme === "light" ? "light" : "dark");
